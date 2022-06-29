@@ -3,20 +3,25 @@ package com.kimminju99.recyclerview
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
-import androidx.compose.foundation.layout.PaddingValues
-import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.Image
+import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
+import androidx.compose.foundation.shape.CornerSize
+import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Scaffold
-import androidx.compose.material.Surface
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.draw.clip
+import androidx.compose.ui.layout.ContentScale
+import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.kimminju99.recyclerview.ui.theme.RecyclerviewTheme
+import com.kimminju99.recyclerview.ui.theme.Typography
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -51,13 +56,32 @@ fun RecyclerViewContent() {
 
 @Composable
 fun PuppyListItem(puppy: Puppy) {
+    Row {
+        PuppyImage(puppy = puppy)
+        Column {
+            Text(text = puppy.name, style = Typography.h6)
+            Text(text = puppy.content, style = Typography.caption)
+        }
+    }
+}
 
+@Composable
+fun PuppyImage(puppy: Puppy) {
+    Image(
+        painter = painterResource(id = puppy.image),
+        contentDescription = null,
+        contentScale = ContentScale.Crop,
+        modifier = Modifier
+            .padding(8.dp)
+            .size(84.dp)
+            .clip(RoundedCornerShape(CornerSize(16.dp)))
+    )
 }
 
 @Preview(showBackground = true)
 @Composable
 fun DefaultPreview() {
     RecyclerviewTheme {
-        MyApp()
+        RecyclerViewContent()
     }
 }

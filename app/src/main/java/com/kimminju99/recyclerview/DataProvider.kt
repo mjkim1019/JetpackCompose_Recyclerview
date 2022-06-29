@@ -11,6 +11,6 @@ object DataProvider {
         Puppy("별이", R.drawable.puppy7, "별.. 별.. 별.."),
         Puppy("해피", R.drawable.puppy8, "암 쏘 해피~~~~ "),
         Puppy("마루", R.drawable.puppy9, "마루야.. 가지마.."),
-        Puppy("까미", R.drawable.puppy10, "난 영어 이름도 있어. Kami")
+        Puppy("까미", R.drawable.puppy10, "난 영어 이름도 있어. Kami.")
     )
 }
