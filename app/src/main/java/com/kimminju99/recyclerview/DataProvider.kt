@@ -1,7 +1,7 @@
 package com.kimminju99.recyclerview
 
 object DataProvider {
-    val puppyList = listOf(
+       val puppyList = listOf(
         Puppy("코코", R.drawable.puppy1, "코코코코코 코 코코코 입!"),
         Puppy("보리", R.drawable.puppy2, "보리 보리 쌀"),
         Puppy("초코", R.drawable.puppy3, "초코송이 먹고싶당"),
