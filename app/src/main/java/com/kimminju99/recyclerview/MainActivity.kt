@@ -23,6 +23,7 @@ import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import coil.compose.AsyncImage
 import com.kimminju99.recyclerview.ui.theme.RecyclerviewTheme
 import com.kimminju99.recyclerview.ui.theme.Typography
 
@@ -81,8 +82,8 @@ fun PuppyListItem(puppy: Puppy) {
 
 @Composable
 fun PuppyImage(puppy: Puppy) {
-    Image(
-        painter = painterResource(id = puppy.image),
+    AsyncImage(
+        model = puppy.image,
         contentDescription = null,
         contentScale = ContentScale.Crop,
         modifier = Modifier
@@ -90,6 +91,7 @@ fun PuppyImage(puppy: Puppy) {
             .size(84.dp)
             .clip(RoundedCornerShape(CornerSize(16.dp)))
     )
+
 }
 
 @Preview(showBackground = true)
