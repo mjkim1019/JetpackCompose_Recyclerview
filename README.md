@@ -1,4 +1,5 @@
 # JetpackCompose_Recyclerview
+JetpackCompose에서 기존 recycler view를 lazy column으로 어떻게 대체했는지에 다루고 있습니다
 ### Android Jetpack Compose - Lazy Column 사용법 
 
 코드를 실행시키면 아래 화면을 볼 수 있습니다 :)</br></br>
